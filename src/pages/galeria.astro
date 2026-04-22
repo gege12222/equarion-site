@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const images = [
+	'/images/gallery/att.25Sgiu2GSV1myCQw1dUD9Z6ia2ulTYT6YLGLGJPUIos.webp',
+	'/images/gallery/att.FrByzCWX9vh_rJXnYDYdQZv_BdGVOhzlowasm4OntEs.webp',
+	'/images/gallery/IMG_0486.webp',
+	'/images/gallery/IMG_0540.webp',
+	'/images/gallery/IMG_1789.webp',
+	'/images/gallery/IMG_1905.webp',
+	'/images/gallery/IMG_2602.webp',
+	'/images/gallery/IMG_2785.webp',
+	'/images/gallery/IMG_2799.webp',
+	'/images/gallery/IMG_2824.webp',
+	'/images/gallery/IMG_3402.webp',
+	'/images/gallery/IMG_4131.webp',
+	'/images/gallery/IMG_4380.webp',
+	'/images/gallery/IMG_4802.webp',
+	'/images/gallery/IMG_5139.webp',
+	'/images/gallery/IMG_5668.webp',
+	'/images/gallery/IMG_5868.webp',
+	'/images/gallery/IMG_5952.webp',
+	'/images/gallery/IMG_6047.webp',
+	'/images/gallery/IMG_6617.webp',
+	'/images/gallery/IMG_6649.webp',
+	'/images/gallery/IMG_6673.webp',
+	'/images/gallery/IMG_6675.webp',
+	'/images/gallery/IMG_6755.webp',
+	'/images/gallery/IMG_7018.webp',
+	'/images/gallery/IMG_7793.webp',
+	'/images/gallery/IMG_7817.webp',
+	'/images/gallery/IMG_7822.webp',
+	'/images/gallery/IMG_7830.webp',
+	'/images/gallery/IMG_7940.webp',
+	'/images/gallery/IMG_7905.webp',
+	'/images/gallery/IMG_7941.webp',
+	'/images/gallery/IMG_7948.webp',
+	'/images/gallery/IMG_8007.webp',
+	'/images/gallery/IMG_8031.webp',
+];
+---
+
+<Layout
+	title="Galéria | Equarion Lovarda"
+	description="Vizuális betekintés az Equarion Lovarda mindennapjaiba, lovaiba és közös pillanataiba."
+>
+	<section class="page-section-top mx-auto w-full max-w-7xl px-5 pb-8 sm:px-6 lg:px-8">
+		<p class="section-label">Galéria</p>
+		<h1 class="mt-4 max-w-4xl text-5xl font-semibold text-equi-green sm:text-6xl">
+			Képek a lovarda életéből, a lovakról és a kalandjainkról.
+		</h1>
+	</section>
+
+	<section class="mx-auto w-full max-w-7xl px-5 py-6 sm:px-6 lg:px-8 lg:py-10">
+		<div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+			{
+				images.map((src, index) => (
+					<figure
+						class:list={[
+							'overflow-hidden rounded-[1.8rem] border border-equi-brown/15 bg-equi-white shadow-[0_20px_45px_rgba(34,34,34,0.06)]',
+							index % 5 === 0 ? 'xl:col-span-2' : '',
+						]}
+					>
+						<img
+							src={src}
+							alt={`Equarion galéria kép ${index + 1}`}
+							loading="lazy"
+							class="h-80 w-full object-cover transition duration-500 hover:scale-105"
+						/>
+					</figure>
+				))
+			}
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+	--color-equi-green: #1f4d3a;
+	--color-equi-beige: #f3efe7;
+	--color-equi-brown: #8b6b4a;
+	--color-equi-white: #fafaf7;
+	--color-equi-black: #222222;
+	--font-serif: 'Cormorant Garamond', serif;
+	--font-sans: 'Manrope', sans-serif;
+}
+
+@layer base {
+	html {
+		overflow-y: scroll;
+		scrollbar-gutter: stable;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: var(--font-sans);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-serif);
+	}
+}
+
+@layer components {
+	.section-label {
+		@apply text-sm font-semibold uppercase tracking-[0.35em] text-equi-brown;
+	}
+
+	.page-section-top {
+		@apply pt-20 lg:pt-24;
+	}
+
+	.hero-rotator {
+		text-shadow: 0 18px 42px rgb(0 0 0 / 0.22);
+	}
+
+	.hero-rotator-track {
+		animation: hero-rotate-words 12s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+		line-height: 1.22;
+	}
+
+	.hero-rotator-line {
+		@apply block;
+		height: 1.22em;
+	}
+}
+
+@keyframes hero-rotate-words {
+	0%,
+	18% {
+		transform: translateY(0);
+	}
+
+	24%,
+	42% {
+		transform: translateY(-1.22em);
+	}
+
+	48%,
+	66% {
+		transform: translateY(-2.44em);
+	}
+
+	72%,
+	90% {
+		transform: translateY(-3.66em);
+	}
+
+	97%,
+	100% {
+		transform: translateY(-4.88em);
+	}
+}

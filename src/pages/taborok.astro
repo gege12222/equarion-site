@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const campPosters = [
+	'/images/lovasnap1.png',
+	'/images/nyari.png',
+];
+---
+
+<Layout
+	title="Táborok | Equarion Lovarda"
+	description="Nyári lovastáborok az Equarion Lovardában: közös élmények, napi lovaglás és családias hangulat gyerekeknek."
+>
+	<section class="page-section-top mx-auto grid w-full max-w-7xl gap-10 px-5 pb-10 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+		<div>
+			<p class="section-label">Nyári Táborok</p>
+			<h1 class="mt-4 text-5xl font-semibold text-equi-green sm:text-6xl">
+				Nyári táborok sok nevetéssel, közös élménnyel és lóközeli pillanatokkal.
+			</h1>
+			<p class="mt-6 max-w-2xl text-base leading-8 text-equi-black/75">
+				Az Equarion nyári táborai kis létszámú csoportokkal, sok odafigyeléssel és vidám programokkal várják a gyerekeket. A célunk, hogy a résztvevők megszeressék a lovakat, barátokat szerezzenek, magabiztosabbak legyenek, és sok szép élménnyel térjenek haza.
+			</p>
+		</div>
+
+		<div class="overflow-hidden rounded-[2rem] border border-equi-brown/15 bg-equi-white p-3 shadow-[0_30px_70px_rgba(34,34,34,0.08)]">
+			<img
+				src="/images/gallery/IMG_6675.webp"
+				alt="Lovastábor az Equarion Lovardában"
+				class="h-full min-h-[420px] w-full rounded-[1.4rem] object-cover"
+			/>
+		</div>
+	</section>
+
+	<section class="mx-auto w-full max-w-7xl px-5 py-10 sm:px-6 lg:px-8 lg:py-14">
+		<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+			<div>
+				<p class="section-label">2026</p>
+				<h2 class="mt-4 text-4xl font-semibold text-equi-green sm:text-5xl">
+					Idei táboraink
+				</h2>
+			</div>
+		</div>
+
+		<div class="mt-8 grid gap-6 md:grid-cols-2">
+			{
+				campPosters.map((poster, index) => (
+					<article class="overflow-hidden rounded-[2rem] border border-equi-brown/15 bg-equi-white p-3 shadow-[0_24px_60px_rgba(34,34,34,0.06)]">
+						<img
+							src={poster}
+							alt={`Equarion Lovarda 2026 tábor plakát ${index + 1}`}
+							loading="lazy"
+							class="h-full w-full rounded-[1.4rem] object-cover"
+						/>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section id="reszletek" class="mx-auto w-full max-w-7xl px-5 py-10 sm:px-6 lg:px-8 lg:py-14">
+		<div class="rounded-[2.2rem] border border-equi-brown/15 bg-equi-green px-8 py-10 text-equi-white shadow-[0_24px_60px_rgba(31,77,58,0.2)] sm:px-10">
+			<h2 class="text-4xl font-semibold">Egy tipikus tábori nap</h2>
+			<div class="mt-6 grid gap-5 md:grid-cols-2">
+				<p class="text-base leading-8 text-equi-white/82">
+					Reggel érkezés után a gyerekek megismerkednek a napi programmal, körbejárjuk együtt a lovardát, majd ellátogatunk a lovakhoz. Megtanulják az alapvető lóápolási feladatokat, részt vesznek a tisztításban és a nyergelés előkészítésében, ezt követően pedig megkezdődnek a lovaglások. Amíg az egyik csoport lovagol, a többiek tízóraiznak, kreatív programokon vesznek részt vagy játékos feladatokkal készülnek a következő programra.
+				</p>
+				<p class="text-base leading-8 text-equi-white/82">
+					Ebéd után rövid pihenő következik, majd a délutáni programok várják őket: lovas sorversenyek, ügyességi játékok, tereplovaglás és különleges élményprogramok, például ló szépségverseny. A napot közös uzsonnával zárjuk. Fontos számunkra, hogy minden gyermek biztonságban, jókedvvel és sok sikerélménnyel gazdagodva térjen haza.
+				</p>
+			</div>
+		</div>
+	</section>
+</Layout>

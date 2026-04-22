@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const horses = [
+	{
+		name: 'Athletic',
+		image: '/images/horses/athletic.webp',
+		description: [
+			'Athletic mondhatni a lovardánk arca.',
+			'Súlyos kehességét sikerült szinten tartani, és csodával határos módon mai napig 130 centiméterig versenyzik 21 éves korában is.',
+		],
+	},
+	{
+		name: 'Princess Leia',
+		image: '/images/horses/leia.webp',
+		description: [
+			'Leia egy impozáns megjelenésű, 2022-ben született fiatal kanca, aki már most felhívja magára a figyelmet könnyed és harmonikus mozgásával.',
+			
+			'Lovardánkban tenyésztett csikó, majd 2 éves korában értékesítésre került, azonban továbbra is nálunk lakik, így részesei vagyunk a fejlődésének.',
+		],
+	},
+	{
+		name: 'Fergeteg',
+		image: '/images/horses/fergeteg.webp',
+		description: [
+			'Fergeteg csikókorában érkezett hozzánk, kiképzése és belovaglása nem volt zökkenőmentes, de a sok törődésnek hála felvette a lovarda nyugodt hangulatát.',
+			
+			'Jelenlegi képzettségi szintjén magabiztosan teljesít 90 cm-es pályákat. Nálunk ménesben tartott, természetét tekintve inkább domináns típus.',
+		],
+		
+	},
+	{
+		name: 'Baileys',
+		image: '/images/horses/baileys.webp',
+		description: [
+			'Baileys egy 2021-ben nálunk született lovacska, aki még éppen póninak számít.',
+			'Kedves és bújós természetének köszönhetően hamar a kisgyerekek kedvencévé vált, és emiatt a lovasiskola meghatározó tagja.',
+			
+			'Ugrókészségének köszönhetően később is segítheti a gyerekek fejlődését, akár a komolyabb edzések szintjén is.',
+		],
+	},
+	{
+		name: 'Esmeralda',
+		image: '/images/horses/esmeralda.webp',
+		description: [
+			'Esmeralda egy kedves, bújós természetű kanca, korábban versenyzett 135 cm-es magasságig, ami jól mutatja képességeit.',
+			'Tenyészkancaként is bizonyított, gyönyörű, ígéretes csikók születtek tőle.',
+			'Chacorion és Leia anyukája. Anyai munkája mellett a lovasiskolába is bedolgozik.',
+		],
+	},
+	{
+		name: 'Chacorion',
+		image: '/images/horses/chacorion.webp',
+		description: [
+			'Chacorion 2024-ben lovardánkban született méncsikó.',
+			'Megkülönböztető ismertetőjegye a fején található nagy hóka, ami karakteressé teszi küllemét.',
+			'Leia féltestvére, mivel ő nem Chico BZ apaságú, hanem Chapman Blue PS.',
+		],
+	},
+	{
+		name: 'Coeur de Rouet',
+		image: '/images/horses/bunny.webp',
+		description: [
+			'Coeur de Rouet Amerikából érkezett, sportos kanca, aki 120 cm-es magasságig versenyzett.',
+			'Alacsony termete ellenére kiváló ugrótehetsége van.',
+			'Mivel már nyugdíjas éveihez közelít, jelenleg tanítványaink első versenypályáit és fejlődését segíti.',
+		],
+	},
+	{
+		name: 'Pilly',
+		image: '/images/horses/pilly.webp',
+		description: [
+			'Pilly a lovardánk western tenyészkancája.',
+			'2025-ben született meg a negyedik csikója.',
+			'Szintén a lovasiskola tagja, de itt már nem western stílusban van lovagolva.',
+		],
+	},
+	{
+		name: 'Manua Loa',
+		image: '/images/horses/manua.webp',
+		description: [
+			'Lovasiskolánk egyik legmegbízhatóbb tagja, elsősorban díjugratásban segíti a gyerekeket.',
+			'A szabadidős versenyektől a diákolimpián át a rajtengedély vizsgáig sok helyzetben számíthatnak rá a tanítványaink.',
+		],
+	},
+	{
+		name: 'Calvados',
+		image: '/images/horses/calvados.webp',
+		description: [
+			'Lovardánk legfiatalabb western tagja, Pilly legutóbbi csikója.',
+			'Jelenleg új, szerető otthont keres.',
+		],
+		
+	},
+	{
+		name: 'Surprise',
+		description: [
+			'A neve nagyon árulkodó, mivel Coeur de Rouet (Bunny) meglepetés csikója.',
+			'Élete első versenypályáját az anyaméhben 7 hónaposan teljesítette, így biztosak vagyunk benne, hogy fényes díjugrató jövő elé néz.',
+		],
+	},
+	{
+		name: 'Cilinder',
+		description: [
+			'Lovardánk legidősebb, saját tenyésztésű tagja.',
+			'Éveken keresztül versenyzett, de élete nagy részét nyugodt legeléssel töltötte.',
+		],
+	},
+	{
+		name: 'Boba Fett',
+		image: '/images/horses/bobafett.webp',
+		description: [
+			'Boba szintén saját tenyésztett csikónk, Pilly csikója.',
+			'2026 januárjától új gazdáját boldogítja.',
+		],
+	},
+];
+---
+
+<Layout
+	title="Lovaink | Equarion Lovarda"
+	description="Ismerd meg az Equarion Lovarda lovait: szerethető egyéniségek, saját tenyésztésű csikók és a lovasiskola megbízható társai."
+>
+	<section class="page-section-top mx-auto w-full max-w-7xl px-5 pb-10 sm:px-6 lg:px-8 lg:pb-14">
+		<p class="section-label mb-8">Lovaink</p>
+		<div class="space-y-6">
+			{
+				horses.map((horse) => (
+					<article class="rounded-[2rem] border border-equi-brown/15 bg-equi-white p-7 shadow-[0_20px_50px_rgba(34,34,34,0.05)] sm:p-9">
+						<div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+							<div class="max-w-3xl">
+								<h2 class="text-4xl font-semibold text-equi-green">{horse.name}</h2>
+								<div class="mt-5 space-y-4 text-base leading-8 text-equi-black/76">
+									{
+										horse.description.map((paragraph) => (
+											<p>{paragraph}</p>
+										))
+									}
+								</div>
+								{
+									horse.highlight && (
+										<p class="mt-6 inline-flex rounded-full border border-equi-brown/25 bg-equi-beige px-5 py-3 text-sm font-semibold text-equi-brown">
+											{horse.highlight}
+										</p>
+									)
+								}
+							</div>
+
+							{
+								horse.image ? (
+									<img
+										src={horse.image}
+										alt={`${horse.name} fotója`}
+										loading="lazy"
+										class="h-52 w-full rounded-[1.5rem] border border-equi-brown/15 object-cover lg:max-w-xs"
+									/>
+								) : (
+									<div class="h-52 w-full rounded-[1.5rem] border border-equi-brown/15 bg-[linear-gradient(135deg,rgba(31,77,58,0.12),rgba(139,107,74,0.14))] lg:max-w-xs">
+										<div class="flex h-full items-center justify-center rounded-[1.5rem] bg-equi-beige/40 text-center">
+											<span class="px-6 font-serif text-3xl text-equi-brown/80">{horse.name}</span>
+										</div>
+									</div>
+								)
+							}
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</section>
+</Layout>
