@@ -5,6 +5,8 @@ const campPosters = [
 	'/images/lovasnap1.png',
 	'/images/nyari.png',
 ];
+
+const applicationForm = '/equarion_jelentkezesi_lap.pdf';
 ---
 
 <Layout
@@ -21,6 +23,23 @@ const campPosters = [
 			<p class="mt-6 max-w-2xl text-base leading-8 text-equi-black/75">
 				Az Equarion nyári táborai kis létszámú csoportokkal, sok odafigyeléssel és vidám programokkal várják a gyerekeket. A célunk, hogy a résztvevők megszeressék a lovakat, barátokat szerezzenek, magabiztosabbak legyenek, és sok szép élménnyel térjenek haza.
 			</p>
+			<div class="mt-8 flex flex-col gap-3 sm:flex-row">
+				<a
+					href={applicationForm}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center justify-center rounded-full bg-equi-green px-6 py-3 text-sm font-semibold text-equi-white shadow-[0_14px_30px_rgba(31,77,58,0.18)] transition hover:bg-equi-brown"
+				>
+					Jelentkezési lap megnyitása
+				</a>
+				<a
+					href={applicationForm}
+					download
+					class="inline-flex items-center justify-center rounded-full border border-equi-brown/25 bg-equi-white px-6 py-3 text-sm font-semibold text-equi-brown transition hover:border-equi-green hover:text-equi-green"
+				>
+					Jelentkezési lap letöltése
+				</a>
+			</div>
 		</div>
 
 		<div class="overflow-hidden rounded-[2rem] border border-equi-brown/15 bg-equi-white p-3 shadow-[0_30px_70px_rgba(34,34,34,0.08)]">
